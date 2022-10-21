@@ -44,15 +44,17 @@ let pilots = [
   }
   //Mostrar Ejercicio_1
   function mostrarejercicio1(){
-    let datos = ejer1().split(",");
-    return datos
+    let datos = retorno.map((e)=> {return `<tr><td>${e}</tr></td>`}).join("");
+    return datos;
   }
   let codigoEjercicio1=document.getElementById("codigo-ejercicio1");
   let salidaEjercicio1=document.getElementById("return-ejercicio1");
   let retorno=ejer1();
-    // Mostrar en HTML
-    codigoEjercicio1.innerHTML= ejer1.toString();
-    salidaEjercicio1.innerHTML= retorno;
+  // Mostrar en HTML
+  codigoEjercicio1.innerHTML= ejer1.toString();
+  salidaEjercicio1.innerHTML= `<table><tr><th>Pilots</th></tr>
+  ${mostrarejercicio1()}
+  </table> `;
 
 //Funcion Ejercicio_2
 function ejer2(){
@@ -80,12 +82,11 @@ function mostrarejercicio2(){
 }
 let codigoEjercicio2=document.getElementById("codigo-ejercicio2");
 let salidaEjercicio2=document.getElementById("return-ejercicio2");
-let retorno2=ejer2();
   // Mostrar en HTML
   codigoEjercicio2.innerHTML= ejer2.toString();
   salidaEjercicio2.innerHTML=  mostrarejercicio2();
 
-//Funcion Ejercicio_2
+//Funcion Ejercicio_3
 function ejer3(){
   pilot3=pilots.filter((e)=> {
     return (e.years>=16)})
@@ -131,7 +132,38 @@ let retorno4=ejer4();
   codigoEjercicio4.innerHTML= ejer4.toString();
   salidaEjercicio4.innerHTML= retorno4;
 
-
+//Funcion Ejercicio_5
+/*function ejer5(){
+  pilot5=pilots.filter((e)=> {
+    return (e.years>=16)})
+  return pilot3;
+}
+//Mostrar Ejercicio_5
+function mostrarejercicio5(){
+  let cabecera=`<tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Edad</th>
+  </tr>`
+  let datos = ejer3();
+  datos=datos.map((e)=>{
+    return `<tr>
+    <td>${e.id}</td>
+    <td>${e.name}</td>
+    <td>${e.years}</td>
+    </tr>`
+  }).join("")
+  return `<table>
+  ${cabecera}
+  ${datos}
+  </table>`
+}
+let codigoEjercicio3=document.getElementById("codigo-ejercicio3");
+let salidaEjercicio3=document.getElementById("return-ejercicio3");
+let retorno3=ejer3();
+  // Mostrar en HTML
+  codigoEjercicio3.innerHTML= ejer3.toString();
+  salidaEjercicio3.innerHTML= mostrarejercicio3();*/
 
 
   
